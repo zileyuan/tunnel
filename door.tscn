@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://di7f70se6id5w"]
+
+[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://wall.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://bosxkjidsjsqu" path="res://door.gd" id="1_v6xrn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hun61"]
+size = Vector3(0.3, 4.2, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xrn"]
+albedo_texture = ExtResource("1_ba8gm")
+roughness = 0.7
+normal_enabled = true
+normal_scale = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hun61"]
+size = Vector3(0.3, 4.2, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba8gm"]
+roughness = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_ba8gm"]
+material = SubResource("StandardMaterial3D_ba8gm")
+size = Vector3(0.05, 3.8, 0.15)
+
+[node name="Door" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_v6xrn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+shape = SubResource("BoxShape3D_hun61")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+material_override = SubResource("StandardMaterial3D_v6xrn")
+mesh = SubResource("BoxMesh_hun61")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -1.7)
+mesh = SubResource("BoxMesh_ba8gm")
+skeleton = NodePath("../..")

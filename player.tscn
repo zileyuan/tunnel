@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyynd3v3kwtxp"]
+
+[ext_resource type="Script" uid="uid://cmjqgd58dsfci" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://b0oxq6wr7uiyd" path="res://girl_with_animations.glb" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0pife"]
+radius = 0.00630726
+height = 0.0941054
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aoiax"]
+animation = &"lanching"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r7rx5"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2v3k6"]
+animation = &"walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hoeld"]
+animation = &"running"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_xktsn"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_r7rx5")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_2v3k6")
+blend_point_1/pos = 5.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_hoeld")
+blend_point_2/pos = 10.0
+min_space = 0.0
+max_space = 10.0
+value_label = "speed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hncb1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3qlke"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g6f2d"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0pife"]
+states/Launching/node = SubResource("AnimationNodeAnimation_aoiax")
+states/Launching/position = Vector2(394.312, 193)
+states/WalkRunBlend/node = SubResource("AnimationNodeBlendSpace1D_xktsn")
+states/WalkRunBlend/position = Vector2(426.5, 53.5)
+transitions = ["Start", "WalkRunBlend", SubResource("AnimationNodeStateMachineTransition_hncb1"), "WalkRunBlend", "Launching", SubResource("AnimationNodeStateMachineTransition_3qlke"), "Launching", "WalkRunBlend", SubResource("AnimationNodeStateMachineTransition_g6f2d")]
+graph_offset = Vector2(3.86974e-05, -19.3125)
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
+collision_mask = 4
+script = ExtResource("1_onrkg")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_i3pqv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Ctrl_bn_COG" parent="Sketchfab_Scene/Sketchfab_model/fbx_merge_fbx/Object_2/RootNode/Object_4/GCtrl_placement/Ctrl_placement/GCtrl_bn_COG" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.047, 0)
+shape = SubResource("CapsuleShape3D_0pife")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Sketchfab_Scene")
+tree_root = SubResource("AnimationNodeStateMachine_0pife")
+anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
+parameters/WalkRunBlend/blend_position = 0.0
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134761, 0.131)
+collision_mask = 4
+spring_length = 0.5
+margin = 0.8
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(0.99889, -0.0139298, 0.0449998, 0.0113761, 0.998337, 0.0565134, -0.0457122, -0.0559387, 0.997387, 0, -0.0765133, 0.0327809)
+current = true
+fov = 35.0
+near = 0.001
+
+[editable path="Sketchfab_Scene"]
