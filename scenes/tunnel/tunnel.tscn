@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cif1lnthvp5h"]
 
-[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://wall.png" id="1_firpc"]
-[ext_resource type="Script" uid="uid://dw22sg2ghebab" path="res://tunnel.gd" id="1_hfrff"]
-[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://door.tscn" id="2_00owb"]
-[ext_resource type="PackedScene" uid="uid://cyynd3v3kwtxp" path="res://player.tscn" id="4_ulhbk"]
+[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://assets/textures/wall.png" id="1_firpc"]
+[ext_resource type="Script" uid="uid://dw22sg2ghebab" path="res://scenes/tunnel/tunnel.gd" id="1_hfrff"]
+[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="2_00owb"]
+[ext_resource type="PackedScene" uid="uid://cyynd3v3kwtxp" path="res://scenes/player/player.tscn" id="4_ulhbk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00owb"]
 albedo_texture = ExtResource("1_firpc")

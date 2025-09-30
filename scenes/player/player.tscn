@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cyynd3v3kwtxp"]
 
-[ext_resource type="Script" uid="uid://cmjqgd58dsfci" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://b0oxq6wr7uiyd" path="res://girl_with_animations.glb" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://cmjqgd58dsfci" path="res://scenes/player/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://b0oxq6wr7uiyd" path="res://assets/models/girl_with_animations.glb" id="2_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0pife"]
 radius = 0.00630726

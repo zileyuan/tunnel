@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1i3iqjph1w4q"
-path.s3tc="res://.godot/imported/girl_with_animations_1.png-f0691e0c9eb6447b6cc0c31748d0d36c.s3tc.ctex"
-path.etc2="res://.godot/imported/girl_with_animations_1.png-f0691e0c9eb6447b6cc0c31748d0d36c.etc2.ctex"
+path.s3tc="res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.s3tc.ctex"
+path.etc2="res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,14 +15,16 @@ generator_parameters={
 
 [deps]
 
-source_file="res://girl_with_animations_1.png"
-dest_files=["res://.godot/imported/girl_with_animations_1.png-f0691e0c9eb6447b6cc0c31748d0d36c.s3tc.ctex", "res://.godot/imported/girl_with_animations_1.png-f0691e0c9eb6447b6cc0c31748d0d36c.etc2.ctex"]
+source_file="res://assets/models/girl_with_animations_1.png"
+dest_files=["res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.s3tc.ctex", "res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.etc2.ctex"]
 
 [params]
 
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -30,6 +32,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

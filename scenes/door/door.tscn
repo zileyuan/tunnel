@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://di7f70se6id5w"]
 
-[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://wall.png" id="1_ba8gm"]
-[ext_resource type="Script" uid="uid://bosxkjidsjsqu" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://assets/textures/wall.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://bosxkjidsjsqu" path="res://scenes/door/door.gd" id="1_v6xrn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hun61"]
 size = Vector3(0.3, 4.2, 4)
