@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cif1lnthvp5h"]
+[gd_scene load_steps=8 format=3 uid="uid://cif1lnthvp5h"]
 
 [ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://assets/textures/wall.png" id="1_firpc"]
 [ext_resource type="Script" uid="uid://dw22sg2ghebab" path="res://scenes/tunnel/tunnel.gd" id="1_hfrff"]
-[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="2_00owb"]
-[ext_resource type="PackedScene" uid="uid://cyynd3v3kwtxp" path="res://scenes/player/player.tscn" id="4_ulhbk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00owb"]
 albedo_texture = ExtResource("1_firpc")
@@ -79,9 +77,3 @@ shape = SubResource("BoxShape3D_8jqgr")
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 30, 0.7, 2.786)
 fov = 35.0
 far = 500.0
-
-[node name="Door" parent="." instance=ExtResource("2_00owb")]
-transform = Transform3D(-0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, 4.4871, 0, 2)
-
-[node name="Player" parent="." instance=ExtResource("4_ulhbk")]
-transform = Transform3D(0.712776, 0, -16.9851, 0, 17, 0, 16.9851, 0, 0.712776, 0, 0, 0)

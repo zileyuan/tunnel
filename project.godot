@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tunnel"
-run/main_scene="uid://cif1lnthvp5h"
+run/main_scene="uid://b8o85yqdriera"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
