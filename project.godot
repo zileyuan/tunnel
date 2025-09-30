@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LoadingManager="*res://scripts/autoload/loading_manager.gd"
+BgmManager="*res://scripts/autoload/bgm_manager.gd"
 
 [display]
 

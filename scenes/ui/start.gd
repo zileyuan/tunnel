@@ -1,6 +1,7 @@
 extends Control
 
 @onready var loading_manager = $"/root/LoadingManager"
+@onready var bgm_manager = $"/root/BgmManager"
 
 @onready var new_game_button = $CenterContainer/RootVBox/ButtonsVBox/NewGameButton
 @onready var load_game_button = $CenterContainer/RootVBox/ButtonsVBox/LoadGameButton
@@ -12,6 +13,7 @@ func _ready() -> void:
 	set_process_input(true);
 	loading_manager.load_progress_updated.connect(_on_load_progress_updated)
 	loading_manager.load_finished.connect(_on_load_finished)
+	bgm_manager.switch_to_intro_music()
 	
 func _on_load_progress_updated(progress: float) -> void:
 	progress_bar.value = progress * 100
