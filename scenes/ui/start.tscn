@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0q2h88sleuj0"]
+
+[ext_resource type="Script" uid="uid://4o3rgtq5j5vk" path="res://scenes/ui/start.gd" id="1_t5jgv"]
+[ext_resource type="FontFile" uid="uid://bcc28ug0iye0w" path="res://assets/fonts/Xolonium-Regular.ttf" id="2_2vdtq"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5jgv")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RootVBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="CenterContainer/RootVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2vdtq")
+theme_override_font_sizes/font_size = 80
+text = "Tunnel Fire"
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="CenterContainer/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2vdtq")
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2vdtq")
+theme_override_font_sizes/font_size = 50
+text = "Load Game"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2vdtq")
+theme_override_font_sizes/font_size = 50
+text = "Quit Game
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/RootVBox"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]

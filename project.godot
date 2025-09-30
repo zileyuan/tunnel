@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="tunnel"
-run/main_scene="uid://b8o85yqdriera"
+run/main_scene="uid://c0q2h88sleuj0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+LoadingManager="*res://scripts/autoload/loading_manager.gd"
 
 [display]
 
