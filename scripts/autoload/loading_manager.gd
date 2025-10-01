@@ -10,6 +10,8 @@ var load_state := ResourceLoader.THREAD_LOAD_INVALID_RESOURCE
 var progress := []
 
 const MAIN_SCENE_PATH = "res://scenes/main/main.tscn"
+const START_SCENE_PATH = "res://scenes/ui/start.tscn"
+const OVER_SCENE_PATH = "res://scenes/ui/over.tscn"
 
 func start_load_main() -> void:
 	var err = ResourceLoader.load_threaded_request(MAIN_SCENE_PATH, "PackedScene")
@@ -22,8 +24,8 @@ func start_load_main() -> void:
 func _process(_delta: float) -> void:
 	if load_state == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 		load_state = ResourceLoader.load_threaded_get_status(MAIN_SCENE_PATH, progress)
-		if progress.size() > 0:
-			print("Loading progress: ", progress[0] * 100, "%")
+		#if progress.size() > 0:
+			#print("Loading progress: ", progress[0] * 100, "%")
 		match load_state:
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 				if progress.size() > 0:
@@ -40,3 +42,9 @@ func enter_main():
 		bgm_manager.switch_to_game_music()
 	else:
 		print("错误：场景尚未加载完成或加载失败。")
+		
+func enter_start():
+	get_tree().change_scene_to_file(START_SCENE_PATH)
+
+func enter_over():
+	get_tree().change_scene_to_file(OVER_SCENE_PATH)

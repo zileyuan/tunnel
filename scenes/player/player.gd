@@ -41,10 +41,10 @@ func _physics_process(delta):
 	# 获取输入方向
 	# 获取旋转输入 (来自 A 和 D)
 	var rotation_dir = Input.get_axis("rotation_right", "rotation_left")
-	print("rotation_dir: ", rotation_dir)
+	# print("rotation_dir: ", rotation_dir)
 	# 获取移动输入 (来自 W/S 和 Q/E)
 	var move_dir = Input.get_vector("strafe_left", "strafe_right", "forward", "backward")
-	print("move_dir: ", move_dir)
+	# print("move_dir: ", move_dir)
 	
 	# 1. 旋转角色 (使用 A 和 D)
 	rotation.y += rotation_dir * rotation_speed * delta

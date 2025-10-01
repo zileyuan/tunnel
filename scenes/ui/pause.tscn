@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk17c28iedgwh"]
+
+[ext_resource type="Script" uid="uid://bdy77tq3wcdif" path="res://scenes/ui/pause.gd" id="1_k23cl"]
+[ext_resource type="FontFile" uid="uid://bcc28ug0iye0w" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_xld5c"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k23cl")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RootVBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="CenterContainer/RootVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xld5c")
+theme_override_font_sizes/font_size = 80
+text = "Game Pause"
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="CenterContainer/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xld5c")
+theme_override_font_sizes/font_size = 50
+text = "Resume Game"
+
+[node name="SaveButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xld5c")
+theme_override_font_sizes/font_size = 50
+text = "Save Game"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xld5c")
+theme_override_font_sizes/font_size = 50
+text = "Quit Game
+"
+
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]
