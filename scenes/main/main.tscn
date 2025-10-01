@@ -1,25 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8o85yqdriera"]
 
-[ext_resource type="PackedScene" uid="uid://cif1lnthvp5h" path="res://scenes/tunnel/tunnel.tscn" id="1_k2fmo"]
 [ext_resource type="Script" uid="uid://5py7qreww3lc" path="res://scenes/main/main.gd" id="1_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://meu5pewesrdf" path="res://scenes/levels/level_container.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cyynd3v3kwtxp" path="res://scenes/player/player.tscn" id="2_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://dk17c28iedgwh" path="res://scenes/ui/pause.tscn" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://b2i4iekbo58g7" path="res://scenes/ui/level_loading.tscn" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://ftx4y4l7njw" path="res://scenes/ui/hud.tscn" id="6_ow5a4"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_l3cfh")
 
-[node name="Tunnel" parent="." instance=ExtResource("1_k2fmo")]
+[node name="LevelContainer" parent="." instance=ExtResource("2_6q06x")]
 
 [node name="Player" parent="." instance=ExtResource("2_l3cfh")]
 transform = Transform3D(0.711887, 0, -16.985088, 0, 17, 0, 16.985088, 0, 0.711887, 0, 0, 0)
-
-[node name="Door" parent="." instance=ExtResource("3_6q06x")]
-transform = Transform3D(-0.1736482, 0, 0.9848077, 0, 1, 0, -0.9848077, 0, -0.1736482, 4.487, 0, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("4_l3cfh")]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_ow5a4")]
+
+[node name="LevelLoading" parent="CanvasLayer" instance=ExtResource("6_hujxm")]

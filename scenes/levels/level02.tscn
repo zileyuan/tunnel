@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtm38bx7o3v7w"]
+
+[ext_resource type="PackedScene" uid="uid://cif1lnthvp5h" path="res://scenes/tunnel/tunnel.tscn" id="1_onnux"]
+[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="2_mxx8o"]
+
+[node name="Level01" type="Node3D"]
+
+[node name="Tunnel" parent="." instance=ExtResource("1_onnux")]
+
+[node name="Door" parent="." instance=ExtResource("2_mxx8o")]
+transform = Transform3D(-0.1736482, 0, 0.9848077, 0, 1, 0, -0.9848077, 0, -0.1736482, 4.487, 0, 2)

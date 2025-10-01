@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2i4iekbo58g7"]
+
+[ext_resource type="FontFile" uid="uid://bcc28ug0iye0w" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_g33df"]
+[ext_resource type="Script" uid="uid://clv7dqs6r6xj6" path="res://scenes/ui/level_loading.gd" id="1_pu5sy"]
+
+[node name="LevelLoading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pu5sy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -232.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g33df")
+theme_override_font_sizes/font_size = 28
+text = "Loading level 01"

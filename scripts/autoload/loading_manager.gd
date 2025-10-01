@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
 func enter_main():
 	if loaded_scene:
 		get_tree().change_scene_to_packed(loaded_scene)
-		bgm_manager.switch_to_game_music()
+		#bgm_manager.switch_to_game_music()
 	else:
 		print("错误：场景尚未加载完成或加载失败。")
 		
