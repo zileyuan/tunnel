@@ -2,6 +2,7 @@ extends Control
 
 @onready var loading_manager = $"/root/LoadingManager"
 @onready var bgm_manager = $"/root/BgmManager"
+@onready var game_manager = $"/root/GameManager"
 
 @onready var new_game_button = $CenterContainer/RootVBox/ButtonsVBox/NewGameButton
 @onready var load_game_button = $CenterContainer/RootVBox/ButtonsVBox/LoadGameButton
@@ -33,7 +34,12 @@ func _on_new_game_button_pressed() -> void:
 	loading_manager.start_load_main()
 
 func _on_load_game_button_pressed() -> void:
-	pass # Replace with function body.
+	new_game_button.disabled = true
+	load_game_button.disabled = true
+	quit_button.disabled = true
+	progress_bar.modulate.a = 255
+	if game_manager.load_game():
+		loading_manager.start_load_main()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit();

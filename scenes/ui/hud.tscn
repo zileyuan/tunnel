@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ftx4y4l7njw"]
+[gd_scene load_steps=3 format=3 uid="uid://ftx4y4l7njw"]
 
 [ext_resource type="FontFile" uid="uid://bcc28ug0iye0w" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://87tr53ys3eh" path="res://scenes/ui/hud.gd" id="1_hqnrr"]
 
 [node name="Hud" type="Control"]
 custom_minimum_size = Vector2(0, 70)
@@ -8,6 +9,7 @@ layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+script = ExtResource("1_hqnrr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -27,14 +29,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_0mwgc")
 theme_override_font_sizes/font_size = 30
-text = "SCORE: 200"
+text = "SCORE: 100"
 
 [node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_0mwgc")
 theme_override_font_sizes/font_size = 30
-text = "TIME: 22222"
+text = "TIME: 01:01"
 
 [node name="HpLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -47,4 +49,4 @@ text = "HP: 100"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0mwgc")
 theme_override_font_sizes/font_size = 30
-text = "LEVEL: 10"
+text = "LEVEL: 1"

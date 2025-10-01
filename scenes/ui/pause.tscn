@@ -46,12 +46,13 @@ theme_override_fonts/font = ExtResource("1_xld5c")
 theme_override_font_sizes/font_size = 50
 text = "Save Game"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
+[node name="ReturnButton" type="Button" parent="CenterContainer/RootVBox/ButtonsVBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xld5c")
 theme_override_font_sizes/font_size = 50
-text = "Quit Game
+text = "Return Menu
 "
 
 [connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="CenterContainer/RootVBox/ButtonsVBox/ReturnButton" to="." method="_on_return_button_pressed"]

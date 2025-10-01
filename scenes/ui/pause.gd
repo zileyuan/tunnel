@@ -1,5 +1,8 @@
 extends Control
 
+@onready var game_manager = $"/root/GameManager"
+@onready var loading_manager = $"/root/LoadingManager"
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	self.visible = false
@@ -19,9 +22,11 @@ func hide_pause_menu() -> void:
 	self.visible = false
 	get_tree().paused = false
 
-func _on_quit_button_pressed() -> void:
-	get_tree().paused = false
-	get_tree().quit();
-
 func _on_resume_button_pressed() -> void:
 	hide_pause_menu()
+
+func _on_save_button_pressed() -> void:
+	game_manager.save_game()
+
+func _on_return_button_pressed() -> void:
+	loading_manager.enter_start()

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var bgm_manager = $"/root/BgmManager"
+@onready var game_manager = $"/root/GameManager"
 
 signal load_progress_updated(progress: float)
 signal load_finished()
