@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpoeo6kjoep02"
-path.s3tc="res://.godot/imported/girl_with_animations_0.png-ea66e5d268784493222918de349aeec9.s3tc.ctex"
-path.etc2="res://.godot/imported/girl_with_animations_0.png-ea66e5d268784493222918de349aeec9.etc2.ctex"
+uid="uid://fwbaugnwxw67"
+path.s3tc="res://.godot/imported/coin_model_coin_roughnes.png-1e8e4a3203ea2ba2475427163ed2ca9c.s3tc.ctex"
+path.etc2="res://.godot/imported/coin_model_coin_roughnes.png-1e8e4a3203ea2ba2475427163ed2ca9c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3d576acb6066807122c7f1f25abe3cf3"
+"md5": "745bc16f71839c3a8c4eb3288395e7c5"
 }
 
 [deps]
 
-source_file="res://assets/models/girl_with_animations_0.png"
-dest_files=["res://.godot/imported/girl_with_animations_0.png-ea66e5d268784493222918de349aeec9.s3tc.ctex", "res://.godot/imported/girl_with_animations_0.png-ea66e5d268784493222918de349aeec9.etc2.ctex"]
+source_file="res://scenes/coin/model/coin_model_coin_roughnes.png"
+dest_files=["res://.godot/imported/coin_model_coin_roughnes.png-1e8e4a3203ea2ba2475427163ed2ca9c.s3tc.ctex", "res://.godot/imported/coin_model_coin_roughnes.png-1e8e4a3203ea2ba2475427163ed2ca9c.etc2.ctex"]
 
 [params]
 

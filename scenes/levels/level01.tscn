@@ -1,11 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgh8une4w8q1b"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ued0wlk45qe"]
 
-[ext_resource type="PackedScene" uid="uid://cif1lnthvp5h" path="res://scenes/tunnel/tunnel.tscn" id="1_msin7"]
-[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="2_g0jr5"]
+[ext_resource type="Texture2D" uid="uid://dr65l4p22ppum" path="res://assets/textures/wall.png" id="1_firpc"]
+[ext_resource type="Script" uid="uid://drf6bitwki8ou" path="res://scenes/levels/level01.gd" id="1_g0jr5"]
+[ext_resource type="PackedScene" uid="uid://di7f70se6id5w" path="res://scenes/door/door.tscn" id="3_lvcni"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00owb"]
+albedo_texture = ExtResource("1_firpc")
+normal_enabled = true
+normal_scale = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfrff"]
+albedo_texture = ExtResource("1_firpc")
+roughness = 0.7
+normal_enabled = true
+normal_scale = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_8jqgr"]
+size = Vector3(500, 1, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulhbk"]
+albedo_texture = ExtResource("1_firpc")
+roughness = 0.7
+normal_enabled = true
+normal_scale = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jqgr"]
+size = Vector3(500, 1, 7)
 
 [node name="Level01" type="Node3D"]
+script = ExtResource("1_g0jr5")
 
-[node name="Tunnel" parent="." instance=ExtResource("1_msin7")]
+[node name="TunnelWall" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_00owb")
+use_collision = true
+collision_layer = 4
 
-[node name="Door" parent="." instance=ExtResource("2_g0jr5")]
+[node name="Outer" type="CSGCylinder3D" parent="TunnelWall"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 3.5
+height = 500.0
+sides = 64
+
+[node name="Inner" type="CSGCylinder3D" parent="TunnelWall"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+operation = 2
+radius = 3.0
+height = 500.0
+sides = 64
+
+[node name="Wall" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_hfrff")
+use_collision = true
+collision_layer = 4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+size = Vector3(0.5, 10, 10)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+operation = 2
+size = Vector3(0.5, 4, 3.6)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_8jqgr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ulhbk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_8jqgr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 30, 0.7, 2.786)
+fov = 35.0
+far = 500.0
+
+[node name="Door" parent="." instance=ExtResource("3_lvcni")]
 transform = Transform3D(-0.1736482, 0, 0.9848077, 0, 1, 0, -0.9848077, 0, -0.1736482, 4.487, 0, 2)

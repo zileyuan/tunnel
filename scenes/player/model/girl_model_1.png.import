@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i3iqjph1w4q"
-path.s3tc="res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.s3tc.ctex"
-path.etc2="res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.etc2.ctex"
+uid="uid://bd8r0qihsw37m"
+path.s3tc="res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.s3tc.ctex"
+path.etc2="res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/girl_with_animations_1.png"
-dest_files=["res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.s3tc.ctex", "res://.godot/imported/girl_with_animations_1.png-953005aa67fc7b526a408c0bf45cc22b.etc2.ctex"]
+source_file="res://scenes/player/model/girl_model_1.png"
+dest_files=["res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.s3tc.ctex", "res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.etc2.ctex"]
 
 [params]
 

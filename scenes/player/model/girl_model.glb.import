@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b0oxq6wr7uiyd"
-path="res://.godot/imported/girl_with_animations.glb-0277276eb151f950adb95f3cea948c88.scn"
+path="res://.godot/imported/girl_model.glb-6f561200a64875a621d90a6a7b33e4bb.scn"
 
 [deps]
 
-source_file="res://assets/models/girl_with_animations.glb"
-dest_files=["res://.godot/imported/girl_with_animations.glb-0277276eb151f950adb95f3cea948c88.scn"]
+source_file="res://scenes/player/model/girl_model.glb"
+dest_files=["res://.godot/imported/girl_model.glb-6f561200a64875a621d90a6a7b33e4bb.scn"]
 
 [params]
 
