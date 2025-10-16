@@ -4,15 +4,15 @@ extends CharacterBody3D
 @export var max_rotation = 100.0
 @export var min_rotation = 0.0
 
-func _input(event):
+func _input(_event):
 	# 检查是否为鼠标左键点击
-	if event is InputEventMouseButton and event.is_pressed():
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			close_door()
-			print("close_door!")
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			open_door()
-			print("open_door!")
+	# if event is InputEventMouseButton and event.is_pressed():
+	# 	if event.button_index == MOUSE_BUTTON_LEFT:
+	# 		close_door()
+	# 		print("close_door!")
+	# 	if event.button_index == MOUSE_BUTTON_RIGHT:
+	# 		open_door()
+	# 		print("open_door!")
 	if Input.is_action_pressed("interact"):
 		open_door()
 

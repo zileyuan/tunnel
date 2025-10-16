@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8o85yqdriera"]
+[gd_scene load_steps=13 format=3 uid="uid://b8o85yqdriera"]
 
 [ext_resource type="Script" uid="uid://5py7qreww3lc" path="res://scenes/main/main.gd" id="1_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://meu5pewesrdf" path="res://scenes/levels/level_container.tscn" id="2_6q06x"]
@@ -9,6 +9,11 @@
 [ext_resource type="Script" uid="uid://nhi6aqdpskqw" path="res://addons/virtual_joystick/virtual_joystick.gd" id="7_b1x3f"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="8_a8run"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="9_ouso4"]
+[ext_resource type="Texture2D" uid="uid://wixgv235ycwg" path="res://assets/textures/button_normal.png" id="10_ouso4"]
+[ext_resource type="Texture2D" uid="uid://hlneumbjqjwx" path="res://assets/textures/button_pressed.png" id="11_blune"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ouso4"]
+radius = 50.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_l3cfh")
@@ -36,6 +41,10 @@ offset_right = 300.0
 offset_bottom = -8.0
 grow_vertical = 0
 script = ExtResource("7_b1x3f")
+action_left = "rotation_left"
+action_right = "rotation_right"
+action_up = "forward"
+action_down = "backward"
 metadata/_custom_type_script = "uid://nhi6aqdpskqw"
 
 [node name="Base" type="TextureRect" parent="CanvasLayer/VirtualJoystick"]
@@ -72,3 +81,48 @@ grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 texture = ExtResource("9_ouso4")
 stretch_mode = 5
+
+[node name="ActionButtonsPanel" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -39.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/ActionButtonsPanel"]
+position = Vector2(-350, -130)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("10_ouso4")
+texture_pressed = ExtResource("11_blune")
+shape = SubResource("CircleShape2D_ouso4")
+action = "strafe_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/ActionButtonsPanel"]
+position = Vector2(-200, -130)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("10_ouso4")
+texture_pressed = ExtResource("11_blune")
+shape = SubResource("CircleShape2D_ouso4")
+action = "strafe_right"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="CanvasLayer/ActionButtonsPanel"]
+position = Vector2(-200, -280)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("10_ouso4")
+texture_pressed = ExtResource("11_blune")
+shape = SubResource("CircleShape2D_ouso4")
+action = "interact"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="CanvasLayer/ActionButtonsPanel"]
+position = Vector2(-350, -280)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("10_ouso4")
+texture_pressed = ExtResource("11_blune")
+shape = SubResource("CircleShape2D_ouso4")
+action = "run"
