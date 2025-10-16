@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd8r0qihsw37m"
-path.s3tc="res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.s3tc.ctex"
-path.etc2="res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.etc2.ctex"
+uid="uid://d2kdemske0dtw"
+path.s3tc="res://.godot/imported/beetle_model_beetle_roughness.png-2ddc4beeb99439c362252a06d07acb54.s3tc.ctex"
+path.etc2="res://.godot/imported/beetle_model_beetle_roughness.png-2ddc4beeb99439c362252a06d07acb54.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ab1ee2074669a62659cf668b372ce93e"
+"md5": "7874456069832751498022e484eb4a84"
 }
 
 [deps]
 
-source_file="res://scenes/player/model/girl_model_1.png"
-dest_files=["res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.s3tc.ctex", "res://.godot/imported/girl_model_1.png-3be8826994504671fe3936d317038254.etc2.ctex"]
+source_file="res://scenes/enemies/models/beetle_model_beetle_roughness.png"
+dest_files=["res://.godot/imported/beetle_model_beetle_roughness.png-2ddc4beeb99439c362252a06d07acb54.s3tc.ctex", "res://.godot/imported/beetle_model_beetle_roughness.png-2ddc4beeb99439c362252a06d07acb54.etc2.ctex"]
 
 [params]
 

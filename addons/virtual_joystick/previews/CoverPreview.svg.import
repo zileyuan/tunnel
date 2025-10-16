@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://82wk4fpsyg1a"
-path="res://.godot/imported/beetle_model_Image.png-d166ad03213803bcb63465a36937a8ff.ctex"
+uid="uid://i34hbruwv5r"
+path="res://.godot/imported/CoverPreview.svg-7c17dc7ed6007b5f94a5e30c30227a42.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "bc34e7f1447de78ff776142f99dc5f45"
 }
 
 [deps]
 
-source_file="res://scenes/enemies/beetle/model/beetle_model_Image.png"
-dest_files=["res://.godot/imported/beetle_model_Image.png-d166ad03213803bcb63465a36937a8ff.ctex"]
+source_file="res://addons/virtual_joystick/previews/CoverPreview.svg"
+dest_files=["res://.godot/imported/CoverPreview.svg-7c17dc7ed6007b5f94a5e30c30227a42.ctex"]
 
 [params]
 
@@ -26,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

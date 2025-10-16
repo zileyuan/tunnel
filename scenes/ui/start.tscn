@@ -50,8 +50,7 @@ text = "Load Game"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2vdtq")
 theme_override_font_sizes/font_size = 50
-text = "Quit Game
-"
+text = "Quit Game"
 
 [node name="ProgressBar" type="ProgressBar" parent="CenterContainer/RootVBox"]
 modulate = Color(1, 1, 1, 0)

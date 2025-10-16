@@ -2,25 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cil7kvpp32dtw"
-path.s3tc="res://.godot/imported/beetle_model_eye_mask.png-8c86a403ac758241938f26e73f635c25.s3tc.ctex"
-path.etc2="res://.godot/imported/beetle_model_eye_mask.png-8c86a403ac758241938f26e73f635c25.etc2.ctex"
+uid="uid://82wk4fpsyg1a"
+path="res://.godot/imported/beetle_model_Image.png-a5226771b6fb53f2d32b581782f60d16.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "4ab112c8f510c4050c347b070a70c21f"
+"md5": "bc34e7f1447de78ff776142f99dc5f45"
 }
 
 [deps]
 
-source_file="res://scenes/enemies/beetle/model/beetle_model_eye_mask.png"
-dest_files=["res://.godot/imported/beetle_model_eye_mask.png-8c86a403ac758241938f26e73f635c25.s3tc.ctex", "res://.godot/imported/beetle_model_eye_mask.png-8c86a403ac758241938f26e73f635c25.etc2.ctex"]
+source_file="res://scenes/enemies/models/beetle_model_Image.png"
+dest_files=["res://.godot/imported/beetle_model_Image.png-a5226771b6fb53f2d32b581782f60d16.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -42,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

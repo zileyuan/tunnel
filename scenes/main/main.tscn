@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8o85yqdriera"]
+[gd_scene load_steps=10 format=3 uid="uid://b8o85yqdriera"]
 
 [ext_resource type="Script" uid="uid://5py7qreww3lc" path="res://scenes/main/main.gd" id="1_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://meu5pewesrdf" path="res://scenes/levels/level_container.tscn" id="2_6q06x"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dk17c28iedgwh" path="res://scenes/ui/pause.tscn" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://b2i4iekbo58g7" path="res://scenes/ui/level_loading.tscn" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://ftx4y4l7njw" path="res://scenes/ui/hud.tscn" id="6_ow5a4"]
+[ext_resource type="Script" uid="uid://nhi6aqdpskqw" path="res://addons/virtual_joystick/virtual_joystick.gd" id="7_b1x3f"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="8_a8run"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="9_ouso4"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_l3cfh")
@@ -22,3 +25,50 @@ transform = Transform3D(0.711887, 0, -16.985088, 0, 17, 0, 16.985088, 0, 0.71188
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_ow5a4")]
 
 [node name="LevelLoading" parent="CanvasLayer" instance=ExtResource("6_hujxm")]
+
+[node name="VirtualJoystick" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -308.0
+offset_right = 300.0
+offset_bottom = -8.0
+grow_vertical = 0
+script = ExtResource("7_b1x3f")
+metadata/_custom_type_script = "uid://nhi6aqdpskqw"
+
+[node name="Base" type="TextureRect" parent="CanvasLayer/VirtualJoystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("8_a8run")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="CanvasLayer/VirtualJoystick/Base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("9_ouso4")
+stretch_mode = 5

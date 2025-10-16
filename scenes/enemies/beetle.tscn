@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://v1v61ah1t2qj"]
+
+[ext_resource type="PackedScene" uid="uid://cnxsnc2bo4s88" path="res://scenes/enemies/models/beetle_model.glb" id="1_5qwsp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5qwsp"]
+radius = 0.7
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5qwsp"]
+
+[node name="Beetle" type="CharacterBody3D"]
+
+[node name="beetle_model" parent="." instance=ExtResource("1_5qwsp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5qwsp")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../beetle_model")
+tree_root = SubResource("AnimationNodeStateMachine_5qwsp")
+anim_player = NodePath("../beetle_model/AnimationPlayer")
+
+[editable path="beetle_model"]

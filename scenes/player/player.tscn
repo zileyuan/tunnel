@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cyynd3v3kwtxp"]
 
 [ext_resource type="Script" uid="uid://cmjqgd58dsfci" path="res://scenes/player/player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://b0oxq6wr7uiyd" path="res://scenes/player/model/girl_model.glb" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://b0oxq6wr7uiyd" path="res://scenes/player/models/girl_model.glb" id="2_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0pife"]
 radius = 0.00630726
@@ -43,7 +43,7 @@ states/Launching/position = Vector2(394.312, 193)
 states/WalkRunBlend/node = SubResource("AnimationNodeBlendSpace1D_xktsn")
 states/WalkRunBlend/position = Vector2(426.5, 53.5)
 transitions = ["Start", "WalkRunBlend", SubResource("AnimationNodeStateMachineTransition_hncb1"), "WalkRunBlend", "Launching", SubResource("AnimationNodeStateMachineTransition_3qlke"), "Launching", "WalkRunBlend", SubResource("AnimationNodeStateMachineTransition_g6f2d")]
-graph_offset = Vector2(3.86974e-05, -19.3125)
+graph_offset = Vector2(15.907505, -19.312468)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)

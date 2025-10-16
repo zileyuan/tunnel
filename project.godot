@@ -32,6 +32,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="tunnel"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/virtual_joystick/plugin.cfg")
+
 [input]
 
 forward={

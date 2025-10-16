@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbh4vktr3pykk"
-path.s3tc="res://.godot/imported/beetle_model_beetle_albedo.png-c1dcd91b4899e4b8ae52412b4679967a.s3tc.ctex"
-path.etc2="res://.godot/imported/beetle_model_beetle_albedo.png-c1dcd91b4899e4b8ae52412b4679967a.etc2.ctex"
+uid="uid://bd8r0qihsw37m"
+path.s3tc="res://.godot/imported/girl_model_1.png-11eeebca1eff06dda260bd4cebee5b91.s3tc.ctex"
+path.etc2="res://.godot/imported/girl_model_1.png-11eeebca1eff06dda260bd4cebee5b91.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bcf4cefdc22c83c014665fee502d938c"
+"md5": "ab1ee2074669a62659cf668b372ce93e"
 }
 
 [deps]
 
-source_file="res://scenes/enemies/beetle/model/beetle_model_beetle_albedo.png"
-dest_files=["res://.godot/imported/beetle_model_beetle_albedo.png-c1dcd91b4899e4b8ae52412b4679967a.s3tc.ctex", "res://.godot/imported/beetle_model_beetle_albedo.png-c1dcd91b4899e4b8ae52412b4679967a.etc2.ctex"]
+source_file="res://scenes/player/models/girl_model_1.png"
+dest_files=["res://.godot/imported/girl_model_1.png-11eeebca1eff06dda260bd4cebee5b91.s3tc.ctex", "res://.godot/imported/girl_model_1.png-11eeebca1eff06dda260bd4cebee5b91.etc2.ctex"]
 
 [params]
 

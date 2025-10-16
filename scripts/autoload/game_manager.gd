@@ -30,27 +30,27 @@ func reset_game() -> void:
 
 func set_score(value: int) -> void:
 	score = value
-	emit_signal("score_changed", score)
+	score_changed.emit(score)
 
 func add_score(value: int) -> void:
 	score += value
-	emit_signal("score_changed", score)
+	score_changed.emit(score)
 
 func set_level(value: int) -> void:
 	level = value
-	emit_signal("level_changed", level)
+	level_changed.emit(level)
 
 func set_time(value: float) -> void:
 	time = value
-	emit_signal("time_changed", time)
+	time_changed.emit(time)
 
 func add_time(value: float) -> void:
 	time += value
-	emit_signal("time_changed", time)
+	time_changed.emit(time)
 
 func set_hp(value: int) -> void:
 	hp = clamp(value, 0, 100)
-	emit_signal("hp_changed", hp)
+	hp_changed.emit(hp)
 
 func reduce_hp(value: int) -> void:
 	set_hp(hp - value)

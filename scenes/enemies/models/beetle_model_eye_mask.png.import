@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgkxexiffycg3"
-path.s3tc="res://.godot/imported/girl_model_0.png-18d6464e88a5d41408edaa71782d55d1.s3tc.ctex"
-path.etc2="res://.godot/imported/girl_model_0.png-18d6464e88a5d41408edaa71782d55d1.etc2.ctex"
+uid="uid://cil7kvpp32dtw"
+path.s3tc="res://.godot/imported/beetle_model_eye_mask.png-b569e021d3deb5f95a231b24a2bae8f8.s3tc.ctex"
+path.etc2="res://.godot/imported/beetle_model_eye_mask.png-b569e021d3deb5f95a231b24a2bae8f8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3d576acb6066807122c7f1f25abe3cf3"
+"md5": "4ab112c8f510c4050c347b070a70c21f"
 }
 
 [deps]
 
-source_file="res://scenes/player/model/girl_model_0.png"
-dest_files=["res://.godot/imported/girl_model_0.png-18d6464e88a5d41408edaa71782d55d1.s3tc.ctex", "res://.godot/imported/girl_model_0.png-18d6464e88a5d41408edaa71782d55d1.etc2.ctex"]
+source_file="res://scenes/enemies/models/beetle_model_eye_mask.png"
+dest_files=["res://.godot/imported/beetle_model_eye_mask.png-b569e021d3deb5f95a231b24a2bae8f8.s3tc.ctex", "res://.godot/imported/beetle_model_eye_mask.png-b569e021d3deb5f95a231b24a2bae8f8.etc2.ctex"]
 
 [params]
 
