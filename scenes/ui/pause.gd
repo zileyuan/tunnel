@@ -9,10 +9,13 @@ func _ready() -> void:
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if self.visible:
-			self.hide_pause_menu()
-		else:
-			self.show_pause_menu()
+		self.do_pause_menu()
+
+func do_pause_menu() -> void:
+	if self.visible:
+		self.hide_pause_menu()
+	else:
+		self.show_pause_menu()
 
 func show_pause_menu() -> void:
 	self.visible = true

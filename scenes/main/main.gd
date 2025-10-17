@@ -6,6 +6,7 @@ signal load_finished()
 @onready var game_manager = $"/root/GameManager"
 @onready var level_container = $LevelContainer
 @onready var level_loading = $CanvasLayer/LevelLoading
+@onready var pause = $CanvasLayer/Pause
 
 var loaded_scene: PackedScene = null
 var load_state := ResourceLoader.THREAD_LOAD_INVALID_RESOURCE
@@ -13,6 +14,19 @@ var progress := []
 var current_level: int
 
 const LEVEL_SCENE_PATH = "res://scenes/levels/level%02d.tscn"
+
+func _notification(what):
+	# NOTIFICATION_WM_GO_BACK_REQUEST 是 Android 平台发出的返回请求通知。
+	# 它的优先级极高，绕过正常的输入事件管道（_input, _unhandled_input）。
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		# 1. 打印日志确认捕获
+		pause.do_pause_menu();
+		#push_warning(">>> 终极捕获成功：NOTIFICATION_WM_GO_BACK_REQUEST! <<<")
+		# 2. 执行你的自定义逻辑（例如，打开/关闭菜单）
+		#_handle_pause_menu()
+
+		# 注意：这里不需要调用 get_viewport().set_input_as_handled()，
+		# 因为它是一个通知而不是输入事件。
 
 func _ready():
 	load_finished.connect(_on_load_finished)
