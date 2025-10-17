@@ -40,3 +40,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -1.7)
 mesh = SubResource("BoxMesh_ba8gm")
 skeleton = NodePath("../..")
+
+[node name="DoubleClickTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DoubleClickTimer" to="." method="_on_double_click_timer_timeout"]

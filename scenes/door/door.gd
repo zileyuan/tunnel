@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var max_rotation = 100.0
 @export var min_rotation = 0.0
 
+const DOUBLE_CLICK_MAX_DELAY = 0.3  # 双击最大间隔时间（秒）
+var last_click_time: float = 0.0    # 记录上一次“按下并释放”动作的时间
+
 func _input(_event):
 	# 检查是否为鼠标左键点击
 	# if event is InputEventMouseButton and event.is_pressed():
@@ -14,7 +17,15 @@ func _input(_event):
 	# 		open_door()
 	# 		print("open_door!")
 	if Input.is_action_pressed("interact"):
-		open_door()
+		var current_time = Time.get_ticks_msec() / 1000.0  # 当前时间（秒）
+		var time_since_last_click = current_time - last_click_time
+		if time_since_last_click < DOUBLE_CLICK_MAX_DELAY:
+			$DoubleClickTimer.stop()
+			open_door()
+			last_click_time = 0.0
+		else:
+			$DoubleClickTimer.start(DOUBLE_CLICK_MAX_DELAY)
+			last_click_time = current_time
 
 func open_door():
 	# 门的当前旋转角度（以度为单位）
@@ -64,3 +75,7 @@ func is_pushed_from(pusher_position: Vector3) -> bool:
 	var local_y_angle_deg = rad_to_deg(local_y_angle_rad)
 	var current_rotation = rad_to_deg(self.rotation.y)
 	return local_y_angle_deg < current_rotation
+
+
+func _on_double_click_timer_timeout() -> void:
+	close_door()
