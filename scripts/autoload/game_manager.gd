@@ -13,8 +13,7 @@ var time: float = 0.0
 var hp: int = 100
 
 func _process(delta: float) -> void:
-	time += delta
-	time_changed.emit(time)
+	add_time(delta)
 
 func update_hud() -> void:
 	score_changed.emit(score)
@@ -52,7 +51,10 @@ func set_hp(value: int) -> void:
 	hp = clamp(value, 0, 100)
 	hp_changed.emit(hp)
 
-func reduce_hp(value: int) -> void:
+func increase_hp(value: int) -> void:
+	set_hp(hp + value)
+
+func decrease_hp(value: int) -> void:
 	set_hp(hp - value)
 
 func save_game() -> void:
@@ -66,13 +68,13 @@ func save_game() -> void:
 	if file:
 		file.store_string(JSON.stringify(save_data))
 		file.close()
-		print("游戏已保存")
+		print("Game saved successfully.")
 	else:
-		print("保存失败！")
-		
+		print("Failed to save game.")
+
 func load_game() -> bool:
 	if not FileAccess.file_exists(SAVE_PATH):
-		print("没有存档文件")
+		print("No game save file found.")
 		return false
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file:
@@ -84,11 +86,11 @@ func load_game() -> bool:
 			level = data.get("level", 1)
 			time = data.get("time", 0.0)
 			hp = data.get("hp", 100)
-			print("存档已加载")
+			print("Game load successfully.")
 			return true
 		else:
-			print("存档解析失败")
+			print("Failed to parse save data.")
 			return false
 	else:
-		print("读取失败")
+		print("Failed to read save file.")
 		return false

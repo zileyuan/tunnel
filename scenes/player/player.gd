@@ -19,14 +19,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	animation_tree.active = true
-	#call_deferred("_start_animation")
-
-#func _start_animation():
-	#anim_state.travel("WalkRunBlend")
-##
-#func _physics_process(delta):
-	### 只更新 blend_position，不再 travel
-	#animation_tree.set("parameters/WalkRunBlend/blend_position", 0.7)
 	
 func _physics_process(delta):
 	# 处理重力

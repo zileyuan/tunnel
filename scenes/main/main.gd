@@ -19,14 +19,7 @@ func _notification(what):
 	# NOTIFICATION_WM_GO_BACK_REQUEST 是 Android 平台发出的返回请求通知。
 	# 它的优先级极高，绕过正常的输入事件管道（_input, _unhandled_input）。
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
-		# 1. 打印日志确认捕获
 		pause.do_pause_menu();
-		#push_warning(">>> 终极捕获成功：NOTIFICATION_WM_GO_BACK_REQUEST! <<<")
-		# 2. 执行你的自定义逻辑（例如，打开/关闭菜单）
-		#_handle_pause_menu()
-
-		# 注意：这里不需要调用 get_viewport().set_input_as_handled()，
-		# 因为它是一个通知而不是输入事件。
 
 func _ready():
 	load_finished.connect(_on_load_finished)
@@ -46,7 +39,7 @@ func _process(_delta: float) -> void:
 				loaded_scene = ResourceLoader.load_threaded_get(level_scene_path)
 				load_finished.emit()
 			ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
-				print("场景加载失败或资源无效!")
+				print("Failed to load scene or resource is invalid.")
 
 func start_load_level(level: int) -> void:
 	current_level = level
@@ -63,4 +56,4 @@ func _on_load_finished() -> void:
 	if loaded_scene:
 		level_container.load_scene(loaded_scene)
 	else:
-		print("错误：场景尚未加载完成或加载失败。")
+		print("The scene has not finished loading or failed to load.")

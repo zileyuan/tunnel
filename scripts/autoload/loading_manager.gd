@@ -35,14 +35,14 @@ func _process(_delta: float) -> void:
 				loaded_scene = ResourceLoader.load_threaded_get(MAIN_SCENE_PATH)
 				load_finished.emit()
 			ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
-				print("场景加载失败或资源无效!")
+				print("Failed to load scene or resource is invalid.")
 		
 func enter_main():
 	if loaded_scene:
 		get_tree().change_scene_to_packed(loaded_scene)
 		#bgm_manager.switch_to_game_music()
 	else:
-		print("错误：场景尚未加载完成或加载失败。")
+		print("The scene has not finished loading or failed to load.")
 		
 func enter_start():
 	get_tree().change_scene_to_file(START_SCENE_PATH)

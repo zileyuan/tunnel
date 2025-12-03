@@ -23,21 +23,21 @@ func _on_load_finished() -> void:
 	new_game_button.disabled = false
 	load_game_button.disabled = false
 	quit_button.disabled = false
-	progress_bar.modulate.a = 0
+	progress_bar.modulate.a = 0.0
 	loading_manager.enter_main()
 	
 func _on_new_game_button_pressed() -> void:
 	new_game_button.disabled = true
 	load_game_button.disabled = true
 	quit_button.disabled = true
-	progress_bar.modulate.a = 255
+	progress_bar.modulate.a = 1.0
 	loading_manager.start_load_main()
 
 func _on_load_game_button_pressed() -> void:
 	new_game_button.disabled = true
 	load_game_button.disabled = true
 	quit_button.disabled = true
-	progress_bar.modulate.a = 255
+	progress_bar.modulate.a = 1.0
 	if game_manager.load_game():
 		loading_manager.start_load_main()
 
